@@ -1,8 +1,11 @@
 const express = require('express');
 const keys = require('./config/keys.js');
-keys.config( {path: './config/keys.js'});
+
 const app = express();
 const bodyParser = require('body-parser');
+
+
+
 const cors = require('cors')
 
 app.use(express.json())
