@@ -1,5 +1,5 @@
+const dev = require('./config/dev.js');
 const express = require('express');
-const keys = require('./config/keys.js');
 
 const app = express();
 const bodyParser = require('body-parser');
@@ -15,12 +15,12 @@ app.use(cors({
 
 const mongoose = require('mongoose');
 mongoose.set("strictQuery", false);
-mongoose.connect(keys.mongoURI, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(dev.mongoURI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 require('./model/Account');
 
 require('./routes/authenticationRoutes')(app);
 
-app.listen(keys.port, () => {
-    console.log("Listening on " + keys.port);
+app.listen(dev.port, () => {
+    console.log("Listening on " + dev.port);
 });
