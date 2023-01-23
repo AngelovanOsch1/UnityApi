@@ -4,8 +4,6 @@ const keys = require('./config/keys.js');
 const app = express();
 const bodyParser = require('body-parser');
 
-
-
 const cors = require('cors')
 
 app.use(express.json())
